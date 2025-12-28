@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudOpexAdvisor | Strategic FinOps Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-padding-top: 100px; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        input[type="range"] { cursor: pointer; }
+        img[alt="CloudOpex Logo"] { cursor: pointer; }
+        #results { min-height: auto; display: block; }
+        
+        /* Dashboard Style Results with Bright Colors */
+        #results-container {
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: 5px;
+        }
+        
+        .result-item {
+            margin-bottom: 12px;
+        }
+        
+        .result-label {
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 600;
+        }
+        
+        #savingsDisplay {
+            font-size: 2.2rem;
+            color: #238636; /* Bright green - current design */
+            font-weight: 700;
+        }
+        
+        #annualSavingsDisplay {
+            font-size: 2.8rem;
+            color: #0f7d19; /* Even brighter green for annual */
+            font-weight: 800;
+        }
+        
+        .separator {
+            border-bottom: 1px solid #30363d;
+            width: 60%;
+            margin: 8px auto;
+        }
+        
+        /* Different colors for each slider */
+        #monthlySpend {
+            accent-color: #0ea5e9; /* Bright cyan for spend */
+        }
+        
+        #optPercent {
+            accent-color: #f97316; /* Vibrant orange for optimization */
+        }
+        
+        /* Standardizing the Calculator Typography */
+        .analyzer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #58a6ff;
+        }
+
+        #results h2, #results h3 {
+            font-size: 1.1rem; /* Shrinks the 'Monthly Potential Savings' text */
+            color: #8b949e;
+            margin-top: 15px;
+        }
+
+        #savingsDisplay, #annualSavingsDisplay, #display-annual {
+            font-size: 1.5rem; /* Reduces the giant $36,000 to a professional size */
+            font-weight: 700;
+            color: #238636; /* Professional 'Success' Green */
+            display: block;
+            margin: 5px 0;
+        }
+        
+        /* Restores visibility while keeping it tight */
+        #zoho-calendar-container iframe {
+            width: 100% !important;
+            height: 520px !important; /* Optimized height for side-by-side layout */
+            border: none;
+            overflow: hidden !important; /* No scrolling */
+        }
+
+        #zoho-calendar-container {
+            max-width: 1000px; /* Wider to allow calendar and slots side-by-side */
+            margin: 10px auto;
+            padding: 4px;
+            background: #fff; /* Matches the white background of the calendar */
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #calculator-section {
+            scroll-margin-top: 120px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="grid grid-cols-3 items-center">
+                <!-- Left: Logo -->
+                <div class="flex items-center">
+                    <a href="#top">
+                        <img src="logo.png" alt="CloudOpex Logo" class="h-20 md:h-28 transform scale-110">
+                    </a>
+                </div>
+                
+                <!-- Center: Branding -->
+                <div class="text-center">
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">CloudOpex<span class="text-sky-500">Advisor</span></h1>
+                    <p class="text-xs md:text-sm text-slate-500 tracking-widest uppercase">Strategic Cloud Architecture</p>
+                </div>
+                
+                <!-- Right: Links -->
+                <div class="flex justify-end gap-4">
+                    <a href="#calculator-section" class="hidden md:inline-block px-6 py-2 text-slate-700 hover:text-blue-600 font-medium transition">Calculator</a>
+                    <a href="#strategy-section" class="hidden md:inline-block px-6 py-2 text-slate-700 hover:text-blue-600 font-medium transition">Strategy Report</a>
+                    <a href="#discover" class="px-6 py-4 md:px-8 md:py-4 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-transform">
+                        Book Discovery
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-4 px-6 bg-gradient-to-b from-blue-50 to-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">Optimize Cloud Costs Today</h2>
+            <p class="text-base text-slate-600">Discover how much you could save on your cloud infrastructure with strategic cloud optimization.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator-section" class="py-6 max-w-3xl mx-auto px-6">
+        <div class="bg-white rounded-lg shadow-md p-3 border border-slate-100">
+            <h3 class="text-xl font-bold mb-2 text-center">Cloud Spend Analyzer</h3>
+            
+            <div class="space-y-2">
+                <!-- Monthly Spend Slider -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-900 mb-1">
+                        Monthly Cloud Spend: <span class="text-sky-600" id="spendDisplay">$10,000</span>
+                    </label>
+                    <input type="range" id="monthlySpend" min="5000" max="500000" step="5000" value="10000" 
+                           class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" 
+                           oninput="updateSavings();">
+                    <div class="flex justify-between text-xs text-slate-500 mt-0">
+                        <span>$5K</span>
+                        <span>$250K</span>
+                        <span>$500K</span>
+                    </div>
+                </div>
+
+                <!-- Optimization Potential Slider -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-900 mb-1">
+                        Optimization Potential: <span class="text-sky-600" id="percentDisplay">30%</span>
+                    </label>
+                    <input type="range" id="optPercent" min="10" max="40" step="1" value="30" 
+                           class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" 
+                           oninput="updateSavings();">
+                    <p class="text-sm text-slate-900 mt-0 font-medium">Note: 30% is the industry benchmark for addressable waste.</p>
+                </div>
+
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="hidden">
+                <div id="results-container">
+                    <div class="result-item">
+                        <span class="result-label">Monthly Potential Savings (<span id="resultPercent">30</span>%)</span>
+                        <div id="savingsDisplay">$3,000</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="result-item">
+                        <span class="result-label">Annual Impact</span>
+                        <div id="annualSavingsDisplay">$36,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Lead Capture Section -->
+    <section id="strategy-section" class="py-6 px-6 bg-white scroll-mt-32">
+        <div style="max-width: 450px; margin: 0 auto; padding: 10px;">
+            <h3 class="text-xl font-bold text-center mb-1 text-slate-900">Get the Full Strategy Report</h3>
+            <p class="text-center text-slate-800 mb-3 text-xs font-medium">Enter your details to receive our "CloudOpex Decoupling Logic" whitepaper and detailed analysis.</p>
+            <iframe frameborder="0" style="height:420px;width:100%;border:none;border-radius:6px;" src="https://forms.zohopublic.com/contactbethef1/form/WhitepaperLeadCaptureDecouplingLogic/formperma/vLM3tal18MQFKWu7qKNCKUufJPsZYShtN7y1nWqLqxg"></iframe>
+        </div>
+    </section>
+
+    <!-- Discovery Session Section -->
+    <section id="discover" class="py-3 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white scroll-mt-32">
+        <div class="text-center">
+            <h3 class="text-2xl font-extrabold mb-1">Start with a Zero-Cost Discovery Session</h3>
+            <p class="text-sm text-slate-300 mb-3">15 minutes to identify your Addressable Waste and get actionable recommendations.</p>
+            <div id="zoho-calendar-container">
+                <iframe src='https://cloudopexadvisor.zohobookings.com/portal-embed#/4748549000000051050' frameborder='0' scrolling='no' allowfullscreen=''></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" style="padding: 20px 12px; text-align: center; background-color: #0d1117;">
+        <h2 style="color: #58a6ff; margin-bottom: 12px;">Ready for Strategic Cloud Optimization?</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+            <div style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #58a6ff; border-radius: 6px; background-color: rgba(88, 166, 255, 0.05);">
+                <h3 style="color: #58a6ff; font-size: 1.15em; font-weight: 700; margin: 0 0 4px 0;">1. Discovery</h3>
+                <p style="color: #c9d1d9; font-size: 0.95em; margin: 0;">Audit of cloud architecture and spend patterns.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #58a6ff; border-radius: 6px; background-color: rgba(88, 166, 255, 0.05);">
+                <h3 style="color: #58a6ff; font-size: 1.15em; font-weight: 700; margin: 0 0 4px 0;">2. Strategy</h3>
+                <p style="color: #c9d1d9; font-size: 0.95em; margin: 0;">Customized roadmap with prioritized opportunities.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #58a6ff; border-radius: 6px; background-color: rgba(88, 166, 255, 0.05);">
+                <h3 style="color: #58a6ff; font-size: 1.15em; font-weight: 700; margin: 0 0 4px 0;">3. Execution</h3>
+                <p style="color: #c9d1d9; font-size: 0.95em; margin: 0;">Guided implementation with ROI tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #0d1117; color: #8b949e; padding: 16px 12px; text-align: center; border-top: 1px solid #30363d; margin-top: 0;">
+        <p style="margin-bottom: 4px; color: #c9d1d9; font-size: 0.95rem;">&copy; 2025 CloudOpexAdvisor. All rights reserved.</p>
+        <p style="margin-bottom: 4px; font-size: 0.95rem;"><a href="mailto:contact@cloudopexadvisor.com" style="color: #58a6ff; text-decoration: none;">contact@cloudopexadvisor.com</a></p>
+        <p style="font-size: 0.95rem;">CloudOpexAdvisor is a division of <strong>BE the first LLC</strong>.</p>
+    </footer>
+
+    <script>
+        function updateSavings() {
+            const spend = document.getElementById('monthlySpend').value;
+            const percentage = document.getElementById('optPercent').value;
+            
+            // Calculate based on both sliders
+            const monthlySavings = Math.round(spend * (percentage / 100));
+            const annualSavings = monthlySavings * 12;
+            
+            // Update the displays
+            document.getElementById('spendDisplay').innerText = '$' + parseInt(spend).toLocaleString();
+            document.getElementById('percentDisplay').innerText = percentage + '%';
+            document.getElementById('savingsDisplay').innerText = '$' + monthlySavings.toLocaleString();
+            document.getElementById('annualSavingsDisplay').innerText = '$' + annualSavings.toLocaleString();
+            document.getElementById('resultPercent').innerText = percentage;
+            
+            // Show results
+            document.getElementById('results').classList.remove('hidden');
+        }
+
+        // Initialize the numbers on page load
+        window.onload = updateSavings;
+    </script>
+</body>
+</html>
