@@ -111,6 +111,21 @@
             scroll-margin-top: 120px;
         }
 
+        .hero-subtitle {
+            font-size: 24px; /* Makes it nice and big */
+            font-weight: 500; /* Makes it slightly bolder */
+            color: #333; /* A professional dark grey/black */
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile Fix: So it doesn't look overwhelming on iPhone */
+        @media (max-width: 600px) {
+            .hero-subtitle {
+                font-size: 18px; 
+            }
+        }
+
         /* Mobile Responsive Design */
         @media (max-width: 600px) {
             /* Navigation layout on mobile */
@@ -219,7 +234,7 @@
     <section class="py-4 px-6 bg-gradient-to-b from-blue-50 to-white text-center">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">Optimize Cloud Costs Today</h2>
-            <p class="text-base text-slate-600">Discover how much you could save on your cloud infrastructure with strategic cloud optimization.</p>
+            <p class="hero-subtitle">Discover how much you could save on your cloud infrastructure with strategic cloud optimization.</p>
         </div>
     </section>
 
