@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudOpexAdvisor | Strategic FinOps Architecture</title>
+    <title>CloudOpexAdvisor | Strategic Cloud Architecture</title>
+    
+    <!-- OpenGraph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="CloudOpexAdvisor | Strategic Cloud Architecture">
+    <meta property="og:description" content="Optimize your cloud costs with strategic cloud optimization. Discover how much you could save on your cloud infrastructure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kannanbakthavatsalam-netizen.github.io/cloudopexadvisor-site/">
+    <meta name="description" content="Optimize your cloud costs with strategic cloud optimization. Discover how much you could save on your cloud infrastructure.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -101,6 +109,78 @@
 
         #calculator-section {
             scroll-margin-top: 120px;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 600px) {
+            /* Navigation layout on mobile */
+            nav .grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            /* Logo sizing on mobile */
+            nav img[alt="CloudOpex Logo"] {
+                height: 40px;
+            }
+
+            /* Navigation text sizing on mobile */
+            nav h1 {
+                font-size: 1.25rem;
+            }
+
+            nav p {
+                font-size: 0.625rem;
+            }
+
+            /* Button container - stack vertically */
+            nav .flex {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            /* Buttons stretch to full width on mobile */
+            nav a {
+                width: 100% !important;
+                text-align: center;
+                padding: 12px 16px !important;
+            }
+
+            /* Main container width on mobile */
+            .max-w-7xl {
+                width: 95%;
+            }
+
+            /* Hero section padding on mobile */
+            section {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            /* Calculator section adjustments */
+            #calculator-section {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            /* Form section adjustments */
+            #strategy-section {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            /* Discovery section adjustments */
+            #discover {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            /* Process section adjustments */
+            #process {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
         }
     </style>
 </head>
