@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloudOpexAdvisor | Cloud Leakage Analyzer</title>
     
+    <!-- Front Door Redirect Logic -->
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const hasSpend = params.has('spend');
+            const hasSkip = params.has('skip');
+            
+            // If no spend param (from Zoho) and no skip param (from about page), redirect to about.html
+            if (!hasSpend && !hasSkip) {
+                window.location.href = 'about.html';
+            }
+        })();
+    </script>
+    
     <!-- OpenGraph Meta Tags for Social Sharing -->
     <meta property="og:title" content="CloudOpexAdvisor | Cloud Leakage Analyzer">
     <meta property="og:description" content="Analyze your cloud leakage. Discover how much addressable waste is costing you with our interactive Cloud Leakage Analyzer.">
