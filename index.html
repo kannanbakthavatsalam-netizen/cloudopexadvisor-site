@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudOpexAdvisor | Strategic Cloud Architecture</title>
+    <title>CloudOpexAdvisor | Cloud Leakage Analyzer</title>
     
     <!-- OpenGraph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="CloudOpexAdvisor | Strategic Cloud Architecture">
-    <meta property="og:description" content="Optimize your cloud costs with strategic cloud optimization. Discover how much you could save on your cloud infrastructure.">
+    <meta property="og:title" content="CloudOpexAdvisor | Cloud Leakage Analyzer">
+    <meta property="og:description" content="Analyze your cloud leakage. Discover how much addressable waste is costing you with our interactive Cloud Leakage Analyzer.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kannanbakthavatsalam-netizen.github.io/cloudopexadvisor-site/">
-    <meta name="description" content="Optimize your cloud costs with strategic cloud optimization. Discover how much you could save on your cloud infrastructure.">
+    <meta name="description" content="Stop cloud waste. Use our Agentic AI Analyzer to identify addressable leakage and reclaim up to 30% of your AWS, Azure, or GCP spend.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
@@ -23,18 +23,18 @@
         input[type="range"] { cursor: pointer; }
         img[alt="CloudOpex Logo"] { cursor: pointer; }
         #results { min-height: auto; display: block; }
-        
+
         /* Dashboard Style Results with Bright Colors */
         #results-container {
             text-align: center;
             padding: 15px 10px;
             margin-top: 5px;
         }
-        
+
         .result-item {
             margin-bottom: 12px;
         }
-        
+
         .result-label {
             font-size: 0.9rem;
             color: #1a1a1a;
@@ -44,35 +44,34 @@
             display: block;
             font-weight: 600;
         }
-        
+
         #savingsDisplay {
             font-size: 2.2rem;
-            color: #238636; /* Bright green - current design */
+            color: #238636;
             font-weight: 700;
         }
-        
+
         #annualSavingsDisplay {
             font-size: 2.8rem;
-            color: #0f7d19; /* Even brighter green for annual */
+            color: #0f7d19;
             font-weight: 800;
         }
-        
+
         .separator {
             border-bottom: 1px solid #30363d;
             width: 60%;
             margin: 8px auto;
         }
-        
+
         /* Different colors for each slider */
         #monthlySpend {
-            accent-color: #0ea5e9; /* Bright cyan for spend */
+            accent-color: #0ea5e9;
         }
-        
+
         #optPercent {
-            accent-color: #f97316; /* Vibrant orange for optimization */
+            accent-color: #f97316;
         }
-        
-        /* Standardizing the Calculator Typography */
+
         .analyzer-title {
             font-size: 1.25rem;
             font-weight: 600;
@@ -80,32 +79,117 @@
         }
 
         #results h2, #results h3 {
-            font-size: 1.1rem; /* Shrinks the 'Monthly Potential Savings' text */
+            font-size: 1.1rem;
             color: #8b949e;
             margin-top: 15px;
         }
 
-        #savingsDisplay, #annualSavingsDisplay, #display-annual {
-            font-size: 1.5rem; /* Reduces the giant $36,000 to a professional size */
-            font-weight: 700;
-            color: #238636; /* Professional 'Success' Green */
-            display: block;
-            margin: 5px 0;
+        /* Strategic Efficiency Brief - Premium Advisor Box */
+        .strategic-brief {
+            background-color: #1e293b;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Restores visibility while keeping it tight */
+
+        .strategic-brief h4 {
+            color: #0ea5e9;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .strategic-brief p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Dashboard Brief Styling (Two-Column Layout) */
+        .strategic-brief-dashboard {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .strategic-brief-dashboard h4 {
+            color: #0ea5e9;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .strategic-brief-dashboard .agentic-insight-text {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .strategic-brief-dashboard .agentic-insight-text strong {
+            color: #0ea5e9;
+        }
+
+        /* Mobile Responsiveness for Two-Column Layout */
+        @media (max-width: 1024px) {
+            .grid.grid-cols-1.lg\:grid-cols-5 {
+                grid-template-columns: 1fr;
+            }
+
+            .lg\:col-span-2,
+            .lg\:col-span-3 {
+                grid-column: auto;
+            }
+
+            .strategic-brief-dashboard {
+                margin-top: 2rem;
+            }
+        }
+
+        /* PDF Download Button */
+        .pdf-download-btn {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .pdf-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+        }
+
+        .pdf-download-btn::before {
+            content: "📄 ";
+        }
+
         #zoho-calendar-container iframe {
             width: 100% !important;
-            height: 520px !important; /* Optimized height for side-by-side layout */
+            height: 520px !important;
             border: none;
-            overflow: hidden !important; /* No scrolling */
+            overflow: hidden !important;
         }
 
         #zoho-calendar-container {
-            max-width: 1000px; /* Wider to allow calendar and slots side-by-side */
+            max-width: 1000px;
             margin: 10px auto;
             padding: 4px;
-            background: #fff; /* Matches the white background of the calendar */
+            background: #fff;
             border-radius: 8px;
             overflow: hidden;
         }
@@ -115,22 +199,19 @@
         }
 
         .hero-subtitle {
-            font-size: 24px; /* Makes it nice and big */
-            font-weight: 500; /* Makes it slightly bolder */
-            color: #333; /* A professional dark grey/black */
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
             line-height: 1.4;
             margin-bottom: 20px;
         }
 
-        /* Mobile Fix: So it doesn't look overwhelming on iPhone */
+        /* Mobile Fix */
         @media (max-width: 600px) {
             .hero-subtitle {
-                font-size: 18px; 
+                font-size: 18px;
             }
-        }
 
-        /* Mobile Responsive Design */
-        @media (max-width: 600px) {
             /* Navigation layout on mobile */
             nav .grid {
                 grid-template-columns: 1fr;
@@ -199,7 +280,149 @@
                 padding-left: 8px !important;
                 padding-right: 8px !important;
             }
+
+        /* Report Banner Styles */
+        #report-banner {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
         }
+
+        #report-banner.interactive-mode {
+            background: linear-gradient(135deg, #8b949e 0%, #6e7681 100%);
+        }
+
+        #report-banner a {
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #report-banner a:hover {
+            opacity: 0.9;
+        }
+
+        /* Agentic AI Loading State */
+        .agentic-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #cbd5e1;
+            font-style: italic;
+            min-height: 60px;
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(203, 213, 225, 0.3);
+            border-top-color: #0ea5e9;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .insight-content {
+            animation: typing 1.2s ease-out forwards;
+        }
+
+        .insight-brief-text {
+            animation: typing 1s ease-out 0.1s forwards;
+            opacity: 0;
+        }
+
+        .insight-reference {
+            animation: typing 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .insight-pro-tip {
+            animation: typing 0.8s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .agentic-insight-text {
+            opacity: 0;
+            transition: opacity 0.6s ease-in;
+        }
+
+        .agentic-insight-text.visible {
+            opacity: 1;
+        }
+
+        /* Prominent Scrollbar Styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #0ea5e9;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #0ea5e9;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--value), #e2e8f0 var(--value), #e2e8f0 100%);
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -208,97 +431,133 @@
     <nav class="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="grid grid-cols-3 items-center">
-                <!-- Left: Logo -->
+                <!-- Left: Logo (links back to landing page) -->
                 <div class="flex items-center">
-                    <a href="#top">
-                        <img src="logo.png" alt="CloudOpex Logo" class="h-20 md:h-28 transform scale-110">
+                    <h1 class="sr-only">Cloud Cost Optimization</h1>
+                    <a href="about.html">
+                        <img src="logo.png" alt="CloudOpexAdvisor Strategic Logo" class="h-20 md:h-28 transform scale-110">
                     </a>
                 </div>
-                
+
                 <!-- Center: Branding -->
                 <div class="text-center">
                     <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">CloudOpex<span class="text-sky-500">Advisor</span></h1>
                     <p class="text-xs md:text-sm text-slate-500 tracking-widest uppercase">Strategic Cloud Architecture</p>
                 </div>
-                
-                <!-- Right: Links -->
-                <div class="flex justify-end gap-4">
-                    <a href="#calculator-section" class="hidden md:inline-block px-6 py-2 text-slate-700 hover:text-blue-600 font-medium transition">Calculator</a>
-                    <a href="#strategy-section" class="hidden md:inline-block px-6 py-2 text-slate-700 hover:text-blue-600 font-medium transition">Strategy Report</a>
-                    <a href="#discover" class="px-6 py-4 md:px-8 md:py-4 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-transform">
-                        Book Discovery
-                    </a>
+
+                <!-- Right: Book Discovery CTA Only -->
+                <div class="flex justify-end">
+                    <a href="#discover" class="px-6 py-4 md:px-8 md:py-4 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-transform">Book Discovery</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-4 px-6 bg-gradient-to-b from-blue-50 to-white text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">Optimize Cloud Costs Today</h2>
-            <p class="hero-subtitle">Discover how much you could save on your cloud infrastructure with strategic cloud optimization.</p>
+    <section class="py-3 px-6 bg-gradient-to-b from-blue-50 to-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Optimize Cloud Costs Today</h2>
+            <p id="heroSubtitle" class="hero-subtitle">Discover how much you could save on your cloud infrastructure with strategic cloud optimization. While the industry benchmark for addressable waste is 30%, we start by identifying your 10% high-confidence recovery immediately.</p>
         </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator-section" class="py-6 max-w-3xl mx-auto px-6">
-        <div class="bg-white rounded-lg shadow-md p-3 border border-slate-100">
-            <h3 class="text-xl font-bold mb-2 text-center">Cloud Spend Analyzer</h3>
+    <!-- Analyzer Section - Two Column Dashboard Layout -->
+    <section id="calculator-section" class="py-6 max-w-6xl mx-auto px-6">
+        <div class="bg-white rounded-lg shadow-lg p-10 border border-slate-200">
+            <h3 class="text-5xl font-extrabold mb-8 text-center text-slate-900">Cloud Spend Analyzer</h3>
             
-            <div class="space-y-2">
-                <!-- Monthly Spend Slider -->
-                <div>
-                    <label class="block text-sm font-semibold text-slate-900 mb-1">
-                        Monthly Cloud Spend: <span class="text-sky-600" id="spendDisplay">$10,000</span>
-                    </label>
-                    <input type="range" id="monthlySpend" min="5000" max="500000" step="5000" value="10000" 
-                           class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" 
-                           oninput="updateSavings();">
-                    <div class="flex justify-between text-xs text-slate-500 mt-0">
-                        <span>$5K</span>
-                        <span>$250K</span>
-                        <span>$500K</span>
+            <!-- Two-Column Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- LEFT COLUMN (60%): Input Controls & Results -->
+                <div class="lg:col-span-3">
+                    <div class="space-y-4">
+                        <!-- Monthly Spend Slider -->
+                        <div>
+                            <label class="block text-lg font-bold text-slate-900 mb-3">
+                                Monthly Cloud Spend: <span class="text-sky-600 text-2xl font-extrabold" id="spendDisplay">$10,000</span>
+                            </label>
+                            <input type="range" id="monthlySpend" min="5000" max="500000" step="5000" value="10000"
+                                class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                                oninput="updateSavings();">
+                            <div class="flex justify-between text-xs text-slate-600 font-semibold mt-1">
+                                <span>$5K</span>
+                                <span>$250K</span>
+                                <span>$500K</span>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Provider Selection -->
+                        <div>
+                            <label class="block text-lg font-bold text-slate-900 mb-3">Cloud Provider:</label>
+                            <select id="cloudProvider" class="w-full px-4 py-3 border-2 border-slate-300 rounded-lg text-base font-semibold" onchange="updateSavings();">
+                                <option value="unknown">Select Provider</option>
+                                <option value="aws">Amazon Web Services (AWS)</option>
+                                <option value="azure">Microsoft Azure</option>
+                                <option value="gcp">Google Cloud Platform (GCP)</option>
+                            </select>
+                        </div>
+
+                        <!-- Optimization Potential Slider -->
+                        <div>
+                            <label class="block text-lg font-bold text-slate-900 mb-3">
+                                Optimization Potential: <span class="text-sky-600 text-2xl font-extrabold" id="percentDisplay">10%</span>
+                            </label>
+                            <input type="range" id="optPercent" min="10" max="30" step="1" value="10"
+                                class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                                oninput="updateSavings();">
+                            <div class="flex justify-between text-xs text-slate-600 font-semibold">
+                                <span>10% Conservative</span>
+                                <span>30% Strategic Benchmark</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results - Left Column -->
+                    <div id="results" class="hidden">
+                        <div id="results-container" class="mt-6 pt-6 border-t-2 border-slate-300">
+                            <div class="result-item text-center">
+                                <span class="result-label text-base font-bold text-slate-800" id="savings-label">10% High-Confidence Instant Recovery</span>
+                                <div id="instant-savings" class="text-6xl font-black text-sky-600 mb-4">$1,000</div>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="result-item text-center">
+                                <span class="result-label text-base font-bold text-slate-800">Annual Strategic Benchmark (30%)</span>
+                                <div id="benchmark-savings" class="text-6xl font-black text-green-600 mb-6">$36,000</div>
+                            </div>
+                        </div>
+
+                        <!-- Conservative vs. Strategic Recovery Info - Moved to Left Column Bottom -->
+                        <div class="bg-sky-50 border-2 border-sky-200 rounded-lg p-5 mt-6 text-center">
+                            <p class="text-sm font-bold text-slate-900 mb-3">📊 Conservative vs. Strategic Recovery</p>
+                            <p class="text-sm text-slate-800"><strong>10% Instant Recovery:</strong> Quick wins from Orphaned Resources and foundational hygiene.</p>
+                            <p class="text-sm text-slate-800 mt-2"><strong>30% Strategic Benchmark:</strong> Full transformation through Architectural Decoupling and commitment orchestration.</p>
+                            <p class="text-sm text-sky-700 mt-3 italic">Adjust the sliders to visualize how our Decoupling Logic bridges the gap.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Optimization Potential Slider -->
-                <div>
-                    <label class="block text-sm font-semibold text-slate-900 mb-1">
-                        Optimization Potential: <span class="text-sky-600" id="percentDisplay">30%</span>
-                    </label>
-                    <input type="range" id="optPercent" min="10" max="40" step="1" value="30" 
-                           class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" 
-                           oninput="updateSavings();">
-                    <p class="text-sm text-slate-900 mt-0 font-medium">Note: 30% is the industry benchmark for addressable waste.</p>
+                <!-- RIGHT COLUMN (40%): Strategic Recovery Roadmap -->
+                <div class="lg:col-span-2">
+                    <!-- Strategic Recovery Roadmap - Agentic AI Box with Premium Styling -->
+                    <div class="strategic-brief-dashboard bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-sky-500 rounded-lg p-8 h-full min-h-96 flex flex-col">
+                        <div>
+                            <h4 class="text-4xl font-extrabold text-sky-300 mb-4 pb-5 border-b-4 border-sky-300">Strategic Recovery Roadmap</h4>
+                            <div class="inline-block mb-6 px-5 py-3 bg-sky-950 border-2 border-sky-300 rounded-full">
+                                <span class="text-base font-bold text-sky-100">🤖 Powered by Agentic AI Logic</span>
+                            </div>
+                        </div>
+                        <div id="agentic-loading" class="agentic-loading" style="display: none;">
+                            <div class="spinner"></div>
+                            <span id="agentic-loading-text" style="color: #cbd5e1;">Agentic AI is analyzing your footprint...</span>
+                        </div>
+                        <p id="agentic-insight" class="agentic-insight-text text-slate-200 leading-relaxed text-base mb-6">
+                            <strong class="text-sky-300">● Architectural Insight:</strong> At your current scale, cloud inefficiency is rarely a budgeting error—it is a Decoupling opportunity. The primary silent drain on your capital is Orphaned Resources (unattached storage and idle compute instances). Prioritizing these allows for a 10% High-Confidence recovery of your monthly spend without impacting a single user or performance metric.
+                            <br><br>
+                            The insight above covers your immediate recovery. To reach the 30% Strategic Benchmark, refer to the full Decoupling Logic Blueprint in your inbox, which outlines the architectural shifts required to bridge the gap.
+                        </p>
+                    </div>
                 </div>
-
             </div>
-
-            <!-- Results -->
-            <div id="results" class="hidden">
-                <div id="results-container">
-                    <div class="result-item">
-                        <span class="result-label">Monthly Potential Savings (<span id="resultPercent">30</span>%)</span>
-                        <div id="savingsDisplay">$3,000</div>
-                    </div>
-                    <div class="separator"></div>
-                    <div class="result-item">
-                        <span class="result-label">Annual Impact</span>
-                        <div id="annualSavingsDisplay">$36,000</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Lead Capture Section -->
-    <section id="strategy-section" class="py-6 px-6 bg-white scroll-mt-32">
-        <div style="max-width: 450px; margin: 0 auto; padding: 10px;">
-            <h3 class="text-xl font-bold text-center mb-1 text-slate-900">Get the Full Strategy Report</h3>
-            <p class="text-center text-slate-800 mb-3 text-xs font-medium">Enter your details to receive our "CloudOpex Decoupling Logic" whitepaper and detailed analysis.</p>
-            <iframe frameborder="0" style="height:420px;width:100%;border:none;border-radius:6px;" src="https://forms.zohopublic.com/contactbethef1/form/WhitepaperLeadCaptureDecouplingLogic/formperma/vLM3tal18MQFKWu7qKNCKUufJPsZYShtN7y1nWqLqxg"></iframe>
         </div>
     </section>
 
@@ -306,14 +565,15 @@
     <section id="discover" class="py-3 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white scroll-mt-32">
         <div class="text-center">
             <h3 class="text-2xl font-extrabold mb-1">Start with a Zero-Cost Discovery Session</h3>
-            <p class="text-sm text-slate-300 mb-3">15 minutes to identify your Addressable Waste and get actionable recommendations.</p>
+            <p class="text-sm text-slate-300 mb-2">15 minutes to identify your Addressable Waste and get actionable recommendations.</p>
             <div id="zoho-calendar-container">
                 <iframe src='https://cloudopexadvisor.zohobookings.com/portal-embed#/4748549000000051050' frameborder='0' scrolling='no' allowfullscreen=''></iframe>
             </div>
         </div>
     </section>
 
-    <section id="process" style="padding: 20px 12px; text-align: center; background-color: #0d1117;">
+    <!-- Process Section -->
+    <section id="process" style="padding: 16px 12px; text-align: center; background-color: #0d1117;">
         <h2 style="color: #58a6ff; margin-bottom: 12px;">Ready for Strategic Cloud Optimization?</h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
             <div style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #58a6ff; border-radius: 6px; background-color: rgba(88, 166, 255, 0.05);">
@@ -331,34 +591,231 @@
         </div>
     </section>
 
-    <footer style="background-color: #0d1117; color: #8b949e; padding: 16px 12px; text-align: center; border-top: 1px solid #30363d; margin-top: 0;">
-        <p style="margin-bottom: 4px; color: #c9d1d9; font-size: 0.95rem;">&copy; 2025 CloudOpexAdvisor. All rights reserved.</p>
-        <p style="margin-bottom: 4px; font-size: 0.95rem;"><a href="mailto:contact@cloudopexadvisor.com" style="color: #58a6ff; text-decoration: none;">contact@cloudopexadvisor.com</a></p>
-        <p style="font-size: 0.95rem;">CloudOpexAdvisor is a division of <strong>BE the first LLC</strong>.</p>
+    <!-- Footer -->
+    <footer style="background-color: #0d1117; color: #8b949e; padding: 24px 12px; text-align: center; border-top: 1px solid #30363d; margin-top: 0;">
+        <p style="margin-bottom: 8px; color: #c9d1d9; font-size: 0.95rem;">&copy; 2025 CloudOpexAdvisor. All rights reserved.</p>
+        <p style="margin-bottom: 8px; font-size: 0.95rem;">
+            <a href="about.html" style="color: #58a6ff; text-decoration: none; margin-right: 10px;">The Methodology</a> | 
+            CloudOpexAdvisor is a division of <strong>Be The First LLC</strong>.
+        </p>
+        <p style="margin-bottom: 8px; font-size: 0.95rem;">
+            <a href="mailto:contact@cloudopexadvisor.com?subject=Cloud Spend Analyzer Feedback" style="color: #58a6ff; text-decoration: none;">Got feedback? Contact us</a>
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 12px;">© 2025. This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #58a6ff; text-decoration: none;" target="_blank">Creative Commons Attribution 4.0 International License</a>. Original attribution: FinOps Foundation.</p>
     </footer>
 
     <script>
+        // Agentic AI Logic - Generates insights based on provider and spend
+        function generateAgenticInsight(provider, monthlySpend) {
+            const spend = parseInt(monthlySpend);
+            
+            if (provider === 'aws') {
+                if (spend < 50000) {
+                    return "🔍 AWS Insight: At your spend level, focus on GP3 volume downgrades and snapshot lifecycle policies. These typically yield 15-20% savings with minimal effort. Consider setting up automatic EBS snapshot retention policies and evaluating older GP2 volumes for cost-effective upgrades.";
+                } else {
+                    return "🔍 AWS Insight: At your spend level, optimize for Cross-AZ data transfer costs and establish Unit Economics tracking. Data egress and inter-AZ replication are significant leaks at scale. Implement RI/Savings Plan blending strategies for compute and review NAT Gateway usage.";
+                }
+            } else if (provider === 'azure') {
+                if (spend < 50000) {
+                    return "🔍 Azure Insight: Target orphaned managed disks and unattached NICs—common sources of waste in growing Azure environments. Implement automated cleanup policies and audit for abandoned resource groups. Quick wins often include cleanup of old snapshots and disk consolidation.";
+                } else {
+                    return "🔍 Azure Insight: Implement Reservation orchestration and investigate rate leakage across subscriptions. At scale, Azure commitment discounts are critical. Conduct a thorough RI/Savings Plan audit and consolidate unused reserved capacity across teams.";
+                }
+            } else if (provider === 'gcp') {
+                return "🔍 GCP Insight: Evaluate BigQuery slot commitments vs. on-demand pricing—slots often provide the best ROI for analytics workloads. Review GKE Autopilot for simplified cluster optimization. Implement committed use discounts (CUDs) for compute and storage resources.";
+            } else {
+                return "🔍 General Insight: Establish a 'Cost-per-Value' metric to decouple growth from costs. Without cloud provider-specific insights, focus on foundational optimization: resource tagging, chargeback models, and FinOps governance. Identify your top 5 cost drivers and optimize sequentially.";
+            }
+        }
+
         function updateSavings() {
             const spend = document.getElementById('monthlySpend').value;
-            const percentage = document.getElementById('optPercent').value;
+            const optPercent = document.getElementById('optPercent').value;
+            const provider = document.getElementById('cloudProvider').value;
             
-            // Calculate based on both sliders
-            const monthlySavings = Math.round(spend * (percentage / 100));
-            const annualSavings = monthlySavings * 12;
-            
+            // Create two savings variables
+            const instantSavings = spend * 0.10;
+            const benchmarkSavings = spend * 0.30;
+
+            // Calculate based on optimization slider (ranges from 10% to 30%)
+            const sliderSavings = spend * (optPercent / 100);
+            const annualSliderSavings = sliderSavings * 12;
+
             // Update the displays
             document.getElementById('spendDisplay').innerText = '$' + parseInt(spend).toLocaleString();
-            document.getElementById('percentDisplay').innerText = percentage + '%';
-            document.getElementById('savingsDisplay').innerText = '$' + monthlySavings.toLocaleString();
-            document.getElementById('annualSavingsDisplay').innerText = '$' + annualSavings.toLocaleString();
-            document.getElementById('resultPercent').innerText = percentage;
+            document.getElementById('percentDisplay').innerText = optPercent + '%';
+            document.getElementById('instant-savings').innerText = `$${Math.round(instantSavings).toLocaleString()}`;
+            document.getElementById('benchmark-savings').innerText = `$${Math.round(annualSliderSavings).toLocaleString()}`;
             
+            // Dynamic text for the savings label with hint
+            document.getElementById('savings-label').innerHTML = `
+                <span class="text-sky-400">10% High-Confidence Instant Recovery</span> 
+                <span class="text-slate-500 block text-xs mt-1">You're exploring ${optPercent}% - Moving toward the 30% Strategic Benchmark</span>
+            `;
+
+            // Trigger agentic insight generation (handles loading state internally)
+            generateAgenticInsight(provider, spend);
+
             // Show results
             document.getElementById('results').classList.remove('hidden');
         }
 
-        // Initialize the numbers on page load
-        window.onload = updateSavings;
+        // Function to generate the high-level Agentic Strategic Brief
+        function generateAgenticInsight(provider, spend) {
+            const insightBox = document.getElementById('agentic-insight');
+            const spendNum = parseInt(spend);
+            
+            // Handle Guest state: use 'Public Cloud' if no provider selected
+            let displayProvider = (provider === 'unknown' || !provider) ? 'Public Cloud' : provider.toLowerCase();
+            
+            // Capitalize provider names properly
+            if (displayProvider === 'aws') displayProvider = 'AWS';
+            else if (displayProvider === 'azure') displayProvider = 'Azure';
+            else if (displayProvider === 'gcp') displayProvider = 'GCP';
+            
+            // Simulate Agentic AI "Thinking" state
+            insightBox.innerHTML = `
+                <div class="flex items-center justify-center p-4">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-500 mr-3"></div>
+                    <p class="text-slate-400">Agentic Engine analyzing your ${displayProvider} footprint...</p>
+                </div>`;
+
+            setTimeout(() => {
+                let strategy = "";
+                let providerTip = "";
+                
+                // Add provider-specific guidance
+                if (displayProvider === 'AWS') {
+                    providerTip = "Focus: GP3 volume optimization, EBS snapshot lifecycle, RDS right-sizing, Reserved Instance/Savings Plan strategies.";
+                } else if (displayProvider === 'Azure') {
+                    providerTip = "Focus: Managed disk cleanup, Reserved Instance orchestration, hybrid benefit optimization, resource group audit.";
+                } else if (displayProvider === 'GCP') {
+                    providerTip = "Focus: Committed Use Discounts (CUDs), BigQuery slot optimization, GKE Autopilot, storage tiering strategies.";
+                } else {
+                    providerTip = "Focus: Establish cost-per-value metrics, resource tagging strategy, chargeback models, FinOps governance framework.";
+                }
+                
+                // Tier 1: Small Footprint (approx $15k) - Orphaned Resources Focus
+                if (spendNum <= 40000) {
+                    strategy = `<strong>Hygiene Priority - 10% High-Confidence Recovery:</strong> At your scale on ${displayProvider}, leakage is primarily driven by Orphaned Resources (unattached storage and idle compute instances). This tier focuses on asset recovery through foundational hygiene. Your 10% High-Confidence recovery is achievable immediately. <br><br><strong>Quick Wins for ${displayProvider}:</strong> ${providerTip}<br><br>To reach the 30% Strategic Benchmark, architectural decoupling would optimize your instance utilization and storage patterns.`;
+                } 
+                // Tier 2: Mid-Market (approx $65k) - Commitment Orchestration Focus
+                else if (spendNum > 40000 && spendNum <= 150000) {
+                    strategy = `<strong>Commitment Orchestration - 10% to 30% Growth Path:</strong> You've reached the scale where commitment alignment is critical on ${displayProvider}. Your 10% High-Confidence recovery comes from eliminating orphaned resources and right-sizing instances. <br><br><strong>${displayProvider} Strategy:</strong> ${providerTip}<br><br>To unlock the full 30% Strategic Benchmark, we orchestrate Savings Plans and Reserved Instances across ${displayProvider}, aligning them with actual usage patterns and growth trajectories.`;
+                } 
+                // Tier 3: Enterprise ($125k+) - Unit Economics Focus
+                else {
+                    strategy = `<strong>Unit Economics Transformation - 10% to 30% Architectural Shift:</strong> At this volume on ${displayProvider}, technical fixes alone achieve only 10% High-Confidence recovery. <br><br><strong>${displayProvider} Enterprise Focus:</strong> ${providerTip}<br><br>To reach the 30% Strategic Benchmark requires establishing rigorous cost-per-transaction metrics and architectural governance. We implement a FinOps governance layer to decouple costs from growth, ensuring your architecture scales efficiently regardless of revenue velocity.`;
+                }
+
+                insightBox.innerHTML = `
+                    <div class="animate-fadeIn">
+                        <p class="text-sky-400 font-bold mb-3 insight-reference">● Agentic Strategic Briefing:</p>
+                        <p class="text-slate-300 leading-relaxed insight-brief-text">${strategy}</p>
+                        <p class="mt-3 text-xs text-sky-400 bg-sky-950 bg-opacity-50 rounded px-3 py-2 insight-pro-tip">💡 <strong>Pro Tip:</strong> To personalize this report with your specific ${displayProvider} provider data, complete the discovery form.</p>
+                    </div>`;
+            }, 1500); // 1.5 second delay to simulate "thinking"
+        }
+
+        function downloadPDF() {
+            // In production, this would trigger a download
+            // For now, we'll open a link or show a message
+            alert('PDF download will be available after form submission. This ensures personalized recommendations based on your cloud profile.');
+            // Alternatively, redirect to the PDF:
+            // window.location.href = 'cloudopex-report.pdf';
+        }
+
+        // The Magic Link "Handshake" on Page Load
+        // Handles both Form Users (with URL params) and Direct Users (manual interaction)
+        window.addEventListener('load', function() {
+            const params = new URLSearchParams(window.location.search);
+            const insightBox = document.getElementById('agentic-insight');
+            
+            // FORM USER: Automated flow from Zoho Form redirect
+            // Check if URL contains both spend and provider parameters
+            const hasUrlParams = params.has('spend') && params.has('provider');
+            
+            if (hasUrlParams) {
+                // Robustly capture spend and provider, handling extra tracking characters
+                const rawSpend = params.get('spend');
+                const rawProvider = params.get('provider');
+                
+                // Sanitize inputs: trim, remove non-numeric from spend, handle URL encoding
+                const spend = rawSpend.trim().replace(/[^0-9]/g, '');
+                const provider = rawProvider.trim().toLowerCase().replace(/[^a-z]/g, '');
+                
+                // Validate that spend is a valid number and provider is recognized
+                const spendNum = parseInt(spend);
+                const validProviders = ['aws', 'azure', 'gcp'];
+                
+                if (spendNum > 0 && validProviders.includes(provider)) {
+                    // Use exact spend value (no tier snapping) - precision data from Zoho Form
+                    const spendFormatted = spendNum.toLocaleString();
+                    const providerDisplay = provider.toUpperCase();
+                    
+                    // Sync the UI components with exact spend value
+                    document.getElementById('monthlySpend').value = spendNum;
+                    document.getElementById('cloudProvider').value = provider;
+                    
+                    // Update hero subtitle with simplified dynamic text
+                    document.getElementById('heroSubtitle').innerText = 
+                        `Analysis Complete: Based on your discovery input, your Strategic Recovery Roadmap is ready below.`;
+                    
+                    // Update reference line for Form User
+                    document.getElementById('roadmap-reference').innerText = 
+                        'Reference: Decoupling Logic Blueprint v2.1 (Drafted based on your Discovery Input)';
+                    
+                    // Show loading state immediately
+                    insightBox.innerHTML = `
+                        <div class="flex items-center justify-center p-4">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-500 mr-3"></div>
+                            <p class="text-slate-400">Agentic Engine analyzing your ${providerDisplay} footprint...</p>
+                        </div>`;
+                    
+                    // Trigger analysis immediately (no delay) - auto-trigger on load
+                    updateSavings(); 
+                    generateAgenticInsight(provider, spendNum);
+                    
+                    // Smooth scroll to calculator section with -100px offset for better positioning
+                    setTimeout(() => {
+                        const calculatorSection = document.getElementById('calculator-section');
+                        if (calculatorSection) {
+                            const offsetTop = calculatorSection.offsetTop - 100;
+                            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                        }
+                    }, 500); // Small delay to allow DOM to settle before scrolling
+                } else {
+                    // Invalid parameters, fall back to direct user mode
+                    showDirectUserMode();
+                }
+            }
+            // DIRECT USER: Manual exploration mode - show placeholder
+            else {
+                showDirectUserMode();
+            }
+            
+            // Helper function to show direct user mode
+            function showDirectUserMode() {
+                // Set defaults
+                document.getElementById('monthlySpend').value = 10000;
+                document.getElementById('cloudProvider').value = 'unknown';
+                
+                // Keep the default hero subtitle from HTML (do NOT override)
+                
+                // Reference line already set to manual mode default in HTML
+                // (Full Report available via Discovery Session)
+                
+                // Show placeholder message in brief box
+                insightBox.innerHTML = `
+                    <div class=\"animate-fadeIn\" style=\"text-align: center; padding: 20px;\">
+                        <p class=\"text-sky-200 text-sm font-semibold\">👈 Select your cloud provider and adjust the spend slider to generate your Strategic Efficiency Brief.</p>
+                        <p class=\"text-sky-300 text-xs mt-2 italic\">The Agentic AI will analyze your footprint and provide tier-specific recommendations in real-time.</p>
+                    </div>`;
+                
+                // Hide results section initially
+                document.getElementById('results').classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
