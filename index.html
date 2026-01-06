@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" id="top">
 <head>
+    <!-- Frame Buster - Break out of Zoho iframe -->
+    <script>
+        if (window.top !== window.self) { 
+            window.top.location = window.location; 
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloudOpexAdvisor | Cloud Leakage Analyzer</title>
@@ -437,22 +443,22 @@
             border: none;
         }
 
-        /* Font Sizing Improvements */
+        /* Font Sizing Improvements - !important to override iframe styles */
         body {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 18px !important;
+            line-height: 1.6 !important;
         }
 
         h1, h2 {
-            font-size: 2.5rem;
+            font-size: 2.5rem !important;
         }
 
         @media (max-width: 600px) {
             body {
-                font-size: 16px;
+                font-size: 16px !important;
             }
             h1, h2 {
-                font-size: 1.8rem;
+                font-size: 1.8rem !important;
             }
         }
         
@@ -614,7 +620,7 @@
     </section>
 
     <!-- Discovery Session Section (Moved to Bottom) -->
-    <section id="discover" class="py-6 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white scroll-mt-32" style="margin-top: 2rem; padding: 2rem; z-index: 10;">
+    <section id="discover" class="py-6 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white scroll-mt-32" style="position: relative; margin-top: 2rem; padding: 2rem; z-index: 10; display: block;">
         <div class="text-center" style="max-width: 600px; margin: 0 auto;">
             <h3 class="text-3xl font-extrabold mb-3" style="color: #0ea5e9;">Ready to Optimize?</h3>
             <p class="text-base text-slate-300 mb-6">Schedule a 15-minute discovery session to identify your addressable waste and get personalized recommendations.</p>
